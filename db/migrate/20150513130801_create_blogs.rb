@@ -1,6 +1,7 @@
 class CreateBlogs < ActiveRecord::Migration
   def change
-    create_table :blogs do |t|
+    create_table :blogs, id: false do |t|
+      t.column :id, 'BIGINT PRIMARY KEY AUTO_INCREMENT'
       t.integer :user_id, limit: 8, null: false
       t.boolean :type, null: false
       t.decimal :score, precision: 6, scale: 3, null: true
